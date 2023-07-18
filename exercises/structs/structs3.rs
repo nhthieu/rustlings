@@ -1,13 +1,8 @@
 // structs3.rs
-//
 // Structs contain data, but can also have logic. In this exercise we have
 // defined the Package struct and we want to test some logic attached to it.
 // Make the code compile and the tests pass!
-//
-// Execute `rustlings hint structs3` or use the `hint` watch subcommand for a
-// hint.
-
-// I AM NOT DONE
+// Execute `rustlings hint structs3` or use the `hint` watch subcommand for a hint.
 
 #[derive(Debug)]
 struct Package {
@@ -29,12 +24,14 @@ impl Package {
         }
     }
 
-    fn is_international(&self) -> ??? {
+    fn is_international(&self) -> bool {
         // Something goes here...
+        self.sender_country != self.recipient_country
     }
 
-    fn get_fees(&self, cents_per_gram: i32) -> ??? {
+    fn get_fees(&self, cents_per_gram: i32) -> i32 {
         // Something goes here...
+        cents_per_gram * self.weight_in_grams
     }
 }
 
